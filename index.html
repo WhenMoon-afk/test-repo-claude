@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Server Commands Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .command-name {
+            font-weight: bold;
+            color: #16a085;
+        }
+        .command-desc {
+            color: #555;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MCP Server Commands Reference</h1>
+    
+    <p>This page documents all available MCP server commands that Claude can utilize.</p>
+    
+    <h2>File System Commands</h2>
+    <ul>
+        <li><span class="command-name">read_file</span> - <span class="command-desc">Read the complete contents of a file</span></li>
+        <li><span class="command-name">read_multiple_files</span> - <span class="command-desc">Read the contents of multiple files simultaneously</span></li>
+        <li><span class="command-name">write_file</span> - <span class="command-desc">Create a new file or completely overwrite an existing file</span></li>
+        <li><span class="command-name">edit_file</span> - <span class="command-desc">Make line-based edits to a text file</span></li>
+        <li><span class="command-name">create_directory</span> - <span class="command-desc">Create a new directory or ensure a directory exists</span></li>
+        <li><span class="command-name">list_directory</span> - <span class="command-desc">Get a detailed listing of all files and directories in a path</span></li>
+        <li><span class="command-name">directory_tree</span> - <span class="command-desc">Get a recursive tree view of files and directories as JSON</span></li>
+        <li><span class="command-name">move_file</span> - <span class="command-desc">Move or rename files and directories</span></li>
+        <li><span class="command-name">search_files</span> - <span class="command-desc">Recursively search for files and directories matching a pattern</span></li>
+        <li><span class="command-name">get_file_info</span> - <span class="command-desc">Retrieve detailed metadata about a file or directory</span></li>
+        <li><span class="command-name">list_allowed_directories</span> - <span class="command-desc">Returns the list of directories accessible to the server</span></li>
+    </ul>
+    
+    <h2>GitHub Integration Commands</h2>
+    <ul>
+        <li><span class="command-name">create_or_update_file</span> - <span class="command-desc">Create or update a single file in a GitHub repository</span></li>
+        <li><span class="command-name">search_repositories</span> - <span class="command-desc">Search for GitHub repositories</span></li>
+        <li><span class="command-name">create_repository</span> - <span class="command-desc">Create a new GitHub repository in your account</span></li>
+        <li><span class="command-name">get_file_contents</span> - <span class="command-desc">Get the contents of a file or directory from a GitHub repository</span></li>
+        <li><span class="command-name">push_files</span> - <span class="command-desc">Push multiple files to a GitHub repository in a single commit</span></li>
+        <li><span class="command-name">create_issue</span> - <span class="command-desc">Create a new issue in a GitHub repository</span></li>
+        <li><span class="command-name">create_pull_request</span> - <span class="command-desc">Create a new pull request in a GitHub repository</span></li>
+        <li><span class="command-name">fork_repository</span> - <span class="command-desc">Fork a GitHub repository to your account or specified organization</span></li>
+        <li><span class="command-name">create_branch</span> - <span class="command-desc">Create a new branch in a GitHub repository</span></li>
+        <li><span class="command-name">list_commits</span> - <span class="command-desc">Get list of commits of a branch in a GitHub repository</span></li>
+        <li><span class="command-name">list_issues</span> - <span class="command-desc">List issues in a GitHub repository with filtering options</span></li>
+        <li><span class="command-name">update_issue</span> - <span class="command-desc">Update an existing issue in a GitHub repository</span></li>
+        <li><span class="command-name">add_issue_comment</span> - <span class="command-desc">Add a comment to an existing issue</span></li>
+        <li><span class="command-name">search_code</span> - <span class="command-desc">Search for code across GitHub repositories</span></li>
+        <li><span class="command-name">search_issues</span> - <span class="command-desc">Search for issues and pull requests across GitHub repositories</span></li>
+        <li><span class="command-name">search_users</span> - <span class="command-desc">Search for users on GitHub</span></li>
+        <li><span class="command-name">get_issue</span> - <span class="command-desc">Get details of a specific issue in a GitHub repository</span></li>
+        <li><span class="command-name">get_pull_request</span> - <span class="command-desc">Get details of a specific pull request</span></li>
+        <li><span class="command-name">list_pull_requests</span> - <span class="command-desc">List and filter repository pull requests</span></li>
+        <li><span class="command-name">create_pull_request_review</span> - <span class="command-desc">Create a review on a pull request</span></li>
+        <li><span class="command-name">merge_pull_request</span> - <span class="command-desc">Merge a pull request</span></li>
+        <li><span class="command-name">get_pull_request_files</span> - <span class="command-desc">Get the list of files changed in a pull request</span></li>
+        <li><span class="command-name">get_pull_request_status</span> - <span class="command-desc">Get the combined status of all status checks for a pull request</span></li>
+        <li><span class="command-name">update_pull_request_branch</span> - <span class="command-desc">Update a pull request branch with latest changes from base branch</span></li>
+        <li><span class="command-name">get_pull_request_comments</span> - <span class="command-desc">Get the review comments on a pull request</span></li>
+        <li><span class="command-name">get_pull_request_reviews</span> - <span class="command-desc">Get the reviews on a pull request</span></li>
+    </ul>
+    
+    <h2>Web Automation Commands (Puppeteer)</h2>
+    <ul>
+        <li><span class="command-name">puppeteer_navigate</span> - <span class="command-desc">Navigate to a URL</span></li>
+        <li><span class="command-name">puppeteer_screenshot</span> - <span class="command-desc">Take a screenshot of the current page or a specific element</span></li>
+        <li><span class="command-name">puppeteer_click</span> - <span class="command-desc">Click an element on the page</span></li>
+        <li><span class="command-name">puppeteer_fill</span> - <span class="command-desc">Fill out an input field</span></li>
+        <li><span class="command-name">puppeteer_select</span> - <span class="command-desc">Select an element on the page with Select tag</span></li>
+        <li><span class="command-name">puppeteer_hover</span> - <span class="command-desc">Hover an element on the page</span></li>
+        <li><span class="command-name">puppeteer_evaluate</span> - <span class="command-desc">Execute JavaScript in the browser console</span></li>
+    </ul>
+    
+    <h2>Utility Commands</h2>
+    <ul>
+        <li><span class="command-name">artifacts</span> - <span class="command-desc">Creates and updates artifacts (self-contained pieces of content)</span></li>
+        <li><span class="command-name">repl</span> - <span class="command-desc">Execute code in a JavaScript environment (analysis tool)</span></li>
+    </ul>
+
+    <footer>
+        <p>Created by Claude | Anthropic | &copy; 2025</p>
+    </footer>
+</body>
+</html>
